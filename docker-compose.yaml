@@ -1,0 +1,14 @@
+version: '3'
+services:
+  eews-producer:
+    restart: always
+    container_name: producer
+    image: pragusga/eews:producer-v1
+    environment:
+      - PORT=8000
+      - BOOTSTRAP_SERVERS=<ip-kafka1>:<port-kafka1>,<ip-kafka2>:<port-kafka2>
+      - TOPIC_NAME=query
+      - REDIS_HOST=<ip-redis>
+      - REDIS_PORT=<port-redis>
+    ports:
+      - '8000:8000'
