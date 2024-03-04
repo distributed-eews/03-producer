@@ -10,5 +10,6 @@ services:
       - TOPIC_NAME=query
       - REDIS_HOST=<ip-redis>
       - REDIS_PORT=<port-redis>
+      - REDIS_PASSWORD=<pass-redis>
     ports:
       - '8000:8000'
